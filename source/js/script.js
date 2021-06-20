@@ -13,6 +13,7 @@ function render(f, e) {
 				}
 			});
 			Cookies.set("page", f, {"expires": 7});
+			window.scrollTo(0, 0);
 		}
 	});
 }
