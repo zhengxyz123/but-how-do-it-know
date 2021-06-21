@@ -4,7 +4,7 @@
 *But How Do It Know* 这本书主要讲述的是 CPU 的工作原理
 ([访问官网](http://www.buthowdoitknow.com/)|[CPU 模拟](http://www.buthowdoitknow.com/but_how_do_it_know_cpu_model.html)).
 
-由于互联网上几乎没有该书的完整版翻译, 所以我决定翻译整书.至简体中文
+由于互联网上几乎没有该书的完整版翻译, 所以我决定翻译整书至简体中文.
 
 # 贡献中文翻译
 进度:
@@ -15,7 +15,7 @@
 提交翻译:
 
 1. 开 issue, 说明要翻译章节的**英文名**(请将标题翻译顺便完成)
-2. 请尽快翻译, 翻译完成后开 Pull Request 合并进主分支
+2. 请尽快翻译(请使用半角符号), 翻译完成后开 Pull Request 合并进主分支
 
 提交插图:
 
