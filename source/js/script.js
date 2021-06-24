@@ -1,3 +1,7 @@
+r = new marked.Renderer();
+r.image = (href, title, text) => {return `<div align="center"><img alt=${text} src=${href}></div>`}
+marked.setOptions({renderer: r});
+
 $(document).ajaxError(() => {
 	alert("章节不存在");
 });
