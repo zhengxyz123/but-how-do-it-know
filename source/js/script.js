@@ -1,5 +1,11 @@
 r = new marked.Renderer();
-r.image = (href, title, text) => {return `<div align="center"><img alt=${text} src=${href}></div>`}
+r.image = (href, title, text) => {
+	if (text == "Gitter") {
+		return `<img alt=${text} src=${href}>`;
+	} else {
+		return `<div align="center"><img alt=${text} src=${href}></div>`;
+	}
+}
 marked.setOptions({renderer: r});
 
 $(document).ajaxError(() => {
