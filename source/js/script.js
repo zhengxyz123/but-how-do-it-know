@@ -1,9 +1,10 @@
+var split = false;
 r = new marked.Renderer();
 r.image = (href, title, text) => {
-	if (text == "Gitter") {
-		return `<img alt=${text} src=${href}>`;
+	if (text.indexOf(":left:") == 0) {
+		return `<img alt="${text.slice(6)}" src="${href}">`;	
 	} else {
-		return `<div align="center"><img alt=${text} src=${href}></div>`;
+		return `<div align="center"><img alt="${text}" src="${href}"></div>`;
 	}
 }
 marked.setOptions({renderer: r});
