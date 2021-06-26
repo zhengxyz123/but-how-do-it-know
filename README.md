@@ -6,6 +6,11 @@
 
 由于互联网上几乎没有该书的完整版翻译, 所以我决定翻译整书至简体中文.
 
+# 常用 issues
+
+- [错别字报告](https://github.com/Minecraft-in-python/but-how-do-it-know/issues/1)
+- [翻译改进](https://github.com/Minecraft-in-python/but-how-do-it-know/issues/2)
+
 # 贡献中文翻译
 进度:
 
