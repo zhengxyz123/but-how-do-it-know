@@ -25,8 +25,20 @@ function render(f, e) {
 				}
 			});
 			Cookies.set("page", f, {"expires": 7});
-			window.scrollTo(0, 0);
+			$("body").scrollTop(0);
 		}
 	});
 }
+
+$(window).scroll(() => {
+	if ($(window).scrollTop() < 100) {
+		if ($(".back-top").css("display") != "none") {
+			$(".back-top").slideUp("normal");
+		}
+	} else {
+		if ($(".back-top").css("display") == "none") {
+			$(".back-top").slideDown("normal");
+		}
+	}
+});
 

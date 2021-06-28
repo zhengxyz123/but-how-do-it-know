@@ -34,5 +34,3 @@
 - 翻译章节时请翻译章节标题, 请结合文意以及英文标题
 - 请使用 `stroke-width="3" stroke="black"` 的线绘制插图
 
-![:right:图 16-2](source/images/16-2.svg)
-
