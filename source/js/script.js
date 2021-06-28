@@ -33,11 +33,11 @@ function render(f, e) {
 $(window).scroll(() => {
 	if ($(window).scrollTop() < 100) {
 		if ($(".back-top").css("display") != "none") {
-			$(".back-top").slideUp("normal");
+			$(".back-top").fadeOut("normal");
 		}
 	} else {
 		if ($(".back-top").css("display") == "none") {
-			$(".back-top").slideDown("normal");
+			$(".back-top").fadeIn("normal");
 		}
 	}
 });
