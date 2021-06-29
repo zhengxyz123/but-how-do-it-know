@@ -14,8 +14,8 @@ $(document).ajaxError(() => {
 	alert("章节不存在");
 });
 
-function render(f, e) {
-	$.get(f, (data, s) => {
+function render(n, e) {
+	$.get(n, (data, s) => {
 		if (s == "success") {
 			$(e).html(marked(data));
 			document.title = $(`${e} h1`).first().text();
