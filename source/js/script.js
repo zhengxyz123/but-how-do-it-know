@@ -10,35 +10,25 @@ r.image = (href, title, text) => {
 }
 marked.setOptions({renderer: r});
 
-$(document).ajaxError(() => {
-	alert("章节不存在");
-});
-
-function render(n, e) {
-	$.get(n, (data, s) => {
-		if (s == "success") {
-			$(e).html(marked(data));
-			document.title = $(`${e} h1`).first().text();
-			$(e).find("a").each((i, j) => {
-				if (($(j).attr("href").indexOf("//") == -1) && ($(j).attr("href").indexOf(".md") == $(j).attr("href").length - 3)) {
-					$(j).attr("href", `javascript:render("${$(j).attr("href")}", "${e}")`);
+function render(f) {
+	$.ajax({
+		url: `books/${f}`,
+		success: (data) => {
+			$("#text").html(marked(data));
+			$(document).title = $("#text h1").first().text();
+			$("#text").find("a").each((i, j) => {
+				if (($(j).attr("href").indexOf("//") == -1) &&
+				($(j).attr("href").indexOf(".md") == $(j).attr("href").length - 3)) {
+					$(j).attr("href", `javascript:render("${$(j).attr("href")}")`);
 				}
 			});
-			Cookies.set("page", f, {"expires": 7});
+			Cookies.set("page", f, {"expires": 30});
 			$("body").scrollTop(0);
+		},
+		error: (xhr) => {
+			$("#text").html(`<h5 align="center">错误代码: ${xhr.status}</h5>
+				<p align="center">页面 <code>${f}</code> 未找到</p>`);
 		}
 	});
 }
-
-$(window).scroll(() => {
-	if ($(window).scrollTop() < 100) {
-		if ($(".back-top").css("display") != "none") {
-			$(".back-top").fadeOut("normal");
-		}
-	} else {
-		if ($(".back-top").css("display") == "none") {
-			$(".back-top").fadeIn("normal");
-		}
-	}
-});
 

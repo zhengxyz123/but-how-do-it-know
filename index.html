@@ -13,19 +13,12 @@
 		<script>
 			$(document).ready(() => {
 				last_view = Cookies.get("page") == undefined? "README.md": Cookies.get("page");
-				render(last_view, "#text");
+				render(last_view);
 			});
 		</script>
 	</head>
 	<body>
-		<div id="text">
-		</div>
-		<div class="back-top" title="回到顶部">
-			<img alt="back-top" src="source/images/back-top.svg" onclick="javascript:$('body').animate({scrollTop: 0}, 1000)">
-		</div>
-		<div class="back-summary" title="目录">
-			<img alt="back-summary" src="source/images/back-summary.svg" onclick="javascript:render('SUMMARY.md', '#text')">
-		</div>
+		<div id="text"></div>
 		<footer>
 			<hr>
 			<div class="clearfix w-100">

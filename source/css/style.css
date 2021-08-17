@@ -37,17 +37,3 @@ pre {
 	overflow: auto;
 }
 
-.back-summary {
-	position: fixed;
-	right: 16px;
-	bottom: 55px;
-	z-index: 9999;
-}
-
-.back-top {
-	display: none;
-	position: fixed;
-	right: 16px;
-	bottom: 100px;
-	z-index: 9999;
-}
