@@ -1,18 +1,23 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Markdown 查看器</title>
+		<title>But How Do It Know</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="source/css/style.css">
 		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 		<script src="source/js/script.js"></script>
 		<script>
 			$(document).ready(() => {
-				last_view = Cookies.get("page") == undefined? "README.md": Cookies.get("page");
+				let last_view = Cookies.get("page") == undefined? "README.md": Cookies.get("page");
+				let r = new marked.Renderer();
+				r.image = (href, title, text) => {
+					return `<img alt="${text}" src="${href}">`;
+				}
+				marked.setOptions({renderer: r});
 				render(last_view);
 			});
 		</script>
@@ -22,8 +27,8 @@
 		<footer>
 			<hr>
 			<div class="clearfix w-100">
-				<a class="float-left" href="javascript:render('SUMMARY.md', '#text')">目录</a>
-				<a class="float-right" href="javascript:render('README.md', '#text')">README</a>
+				<a class="float-start" href="javascript:render('SUMMARY.md')">目录</a>
+				<a class="float-end" href="javascript:render('README.md')">README</a>
 			</div>
 		</footer>
 	</body>
