@@ -3,11 +3,9 @@
 	<head>
 		<title>But How Do It Know</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="source/css/style.css">
 		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 		<script src="source/js/script.js"></script>
 		<script>
@@ -26,10 +24,11 @@
 		<div id="text"></div>
 		<footer>
 			<hr>
-			<div class="clearfix w-100">
-				<a class="float-start" href="javascript:render('SUMMARY.md')">目录</a>
-				<a class="float-end" href="javascript:render('README.md')">README</a>
+			<div style="width: 100%;">
+				<a style="float: left;" href="javascript:render('SUMMARY.md')">目录</a>
+				<a style="float: right;" href="javascript:render('README.md')">README</a>
 			</div>
+			<div style="clear: both;"></div>
 		</footer>
 	</body>
 </html>
