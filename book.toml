@@ -1,0 +1,9 @@
+[book]
+authors = ["jason-bowen-zheng"]
+language = "zh"
+multilingual = false
+src = "src"
+title = "But How Do It Know?"
+
+[output.html]
+curly-quotes = true
