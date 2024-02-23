@@ -4,7 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: XAMPPRocky/deploy-mdbook@v1.1
+      - uses: actions/checkout@v4
+      - uses: extractions/setup-crate@v1
         with:
-            token: ${{ secrets.GITHUB_TOKEN }}
+          owner: rust-lang
+          name: mdBook
+      - run: mdbook build
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
