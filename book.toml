@@ -3,7 +3,7 @@ authors = ["zhengxyz123"]
 language = "zh"
 multilingual = false
 src = "src"
-title = "But How Do It Know?"
+title = "它是怎么知道的？"
 
 [output.html]
 curly-quotes = true
