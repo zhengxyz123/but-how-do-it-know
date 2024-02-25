@@ -1,10 +1,8 @@
 # Summary
 
-[简介](index.md)
+[简介](00_start.md)
 
-- - -
-
-- [介绍](introduction.md)
-- [只是事实](just-the-facts.md)
-- [计算机有多快]()
-- [语言](language.md)
+- [介绍](01_introduction.md)
+- [只是事实](02_just_the_facts.md)
+- [计算机有多快](03_speed.md)
+- [语言](04_language.md)
